@@ -11,13 +11,13 @@ app.use(cors());
 const repositories = [];
 
 app.get("/repositories", (request, response) => {
-  // TODO
+  return response.json(repositories);
 });
 
 app.post("/repositories", (request, response) => {
-  const { title, url, techs } = request.body;
+  const { title, techs } = request.body;
 
-  const repository = { id: uuid(), title, url, techs, likes: 0 };
+  const repository = { id: uuid(), title, url: "https://github.com/andredavid1/gostack-template-conceitos-nodejs", techs, likes: 0 };
 
   repositories.push(repository)
 
